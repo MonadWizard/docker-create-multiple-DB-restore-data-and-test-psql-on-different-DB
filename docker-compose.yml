@@ -1,0 +1,62 @@
+version: "3.9"
+
+services:
+  pg1:
+    image: postgres
+    container_name: pg1
+    environment:
+      POSTGRES_USER: aggame_dev
+      POSTGRES_PASSWORD: L:>(6]nkYw8se&)UQ{
+      POSTGRES_DB: aggamedb
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./backup.dump:/docker-entrypoint-initdb.d/backup.dump
+      - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
+    entrypoint: ["docker-entrypoint.sh"]
+    command: ["postgres"]
+
+  pg2:
+    image: postgres
+    container_name: pg2
+    environment:
+      POSTGRES_USER: aggame_dev
+      POSTGRES_PASSWORD: L:>(6]nkYw8se&)UQ{
+      POSTGRES_DB: aggamedb
+    ports:
+      - "5434:5432"
+    volumes:
+      - ./backup.dump:/docker-entrypoint-initdb.d/backup.dump
+      - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
+    entrypoint: ["docker-entrypoint.sh"]
+    command: ["postgres"]
+
+  pg3:
+    image: postgres
+    container_name: pg3
+    environment:
+      POSTGRES_USER: aggame_dev
+      POSTGRES_PASSWORD: L:>(6]nkYw8se&)UQ{
+      POSTGRES_DB: aggamedb
+    ports:
+      - "5435:5432"
+    volumes:
+      - ./backup.dump:/docker-entrypoint-initdb.d/backup.dump
+      - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
+    entrypoint: ["docker-entrypoint.sh"]
+    command: ["postgres"]
+
+  pg4:
+    image: postgres
+    container_name: pg4
+    environment:
+      POSTGRES_USER: aggame_dev
+      POSTGRES_PASSWORD: L:>(6]nkYw8se&)UQ{
+      POSTGRES_DB: aggamedb
+    ports:
+      - "5436:5432"
+    volumes:
+      - ./backup.dump:/docker-entrypoint-initdb.d/backup.dump
+      - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
+    entrypoint: ["docker-entrypoint.sh"]
+    command: ["postgres"]
