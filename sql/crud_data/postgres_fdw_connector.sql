@@ -24,7 +24,7 @@ CREATE FOREIGN TABLE auth_user_app_user_pg1 (
     userid varchar,
     user_fullname jsonb,
     user_email varchar,
-    user_primary_pic bytea
+    user_primary_pic varchar
 )
 SERVER pg4_server
 OPTIONS (schema_name 'public', table_name 'auth_user_app_user');
@@ -67,7 +67,7 @@ EXPLAIN ANALYZE
 SELECT row_to_json(t)
 FROM (
     SELECT user_fullname, user_email, user_primary_pic
-    FROM auth_user_app_user_pg1
+    FROM auth_user_app_user
     WHERE userid = 'BD__0126103817299479'
 ) t;
 
@@ -111,7 +111,7 @@ $$ LANGUAGE plpgsql;
 
 EXPLAIN ANALYZE
 select update_data_as_jsonb($${
-    "user_fullname" : {"last_name": "change", "first_name": "Player1"},
+    "user_fullname" : {"last_name": "change fdw pg4", "first_name": "Player1"},
     "user_email" : "player1@ag.com",
   "user_primary_pic" : "baal baal black ship",
     "user_id" : "BD__0126103817299479"

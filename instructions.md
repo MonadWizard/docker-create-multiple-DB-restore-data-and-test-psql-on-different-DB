@@ -105,6 +105,12 @@ docker compose up -d
 
 ```
 
+## 🗑️ stop docker containers
+
+```
+docker compose down -v
+```
+
 ## 🧪 Test Access 📦 1. Connect to pg1
 
 ```
@@ -136,10 +142,4 @@ docker exec -it pg1 psql -U postgres -d postgres
 
 ```
 docker exec -it pg1 bash
-```
-
-## 🗑️ stop docker containers
-
-```
-docker compose down -v
 ```

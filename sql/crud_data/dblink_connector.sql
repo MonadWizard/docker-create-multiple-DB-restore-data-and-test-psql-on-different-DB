@@ -87,7 +87,7 @@ $$);
 
 
 
-
+--   -- read operation ----------------------------------------------------------------------------------------------------------------
 
 CREATE OR REPLACE FUNCTION get_data_as_jsonb_dblink(passing_data jsonb)
 RETURNS jsonb AS $$
@@ -150,6 +150,7 @@ explain analyze SELECT row_to_json(t) FROM (SELECT user_fullname, user_email, us
 
 
 select user_fullname, user_email, user_primary_pic from auth_user_app_user where userid = 'BD__0126103817299479';
+select * from auth_user_app_user where userid = 'BD__0126103817299479';
 
 
 
@@ -202,6 +203,7 @@ $$ LANGUAGE plpgsql;
 
 
 
+
 explain analyse select update_data_as_jsonb_dblink($$
     {
     "database_conn" : {
@@ -214,7 +216,7 @@ explain analyse select update_data_as_jsonb_dblink($$
         },
     "user_id": "BD__0126103817299479",
 
-    "user_fullname" : {"last_name": "change dblink ", "first_name": "Player1"},
+    "user_fullname" : {"last_name": "change dblink pg4 ", "first_name": "Player1"},
     "user_email" : "player1@ag.com",
     "user_primary_pic" : "baal baal black ship"
 
