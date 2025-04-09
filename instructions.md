@@ -112,6 +112,34 @@ psql -h localhost -p 5433 -U aggame_dev -d aggamedb
 
 # password: pass
 
+```
 
+## check docker containers
 
+```
+docker ps
+```
+
+## check logs
+
+```
+docker logs pg1
+```
+
+## check database
+
+```
+docker exec -it pg1 psql -U postgres -d postgres
+```
+
+## shell access to pg1
+
+```
+docker exec -it pg1 bash
+```
+
+## 🗑️ stop docker containers
+
+```
+docker compose down -v
 ```
